@@ -97,6 +97,7 @@
             this.partsAddButton.TabIndex = 5;
             this.partsAddButton.Text = "Add";
             this.partsAddButton.UseVisualStyleBackColor = true;
+            this.partsAddButton.Click += new System.EventHandler(this.partsAddButton_Click);
             // 
             // partsModifyButton
             // 
@@ -106,6 +107,7 @@
             this.partsModifyButton.TabIndex = 6;
             this.partsModifyButton.Text = "Modify";
             this.partsModifyButton.UseVisualStyleBackColor = true;
+            this.partsModifyButton.Click += new System.EventHandler(this.partsModifyButton_Click);
             // 
             // partsDeleteButton
             // 
@@ -133,6 +135,7 @@
             this.productsModifyButton.TabIndex = 13;
             this.productsModifyButton.Text = "Modify";
             this.productsModifyButton.UseVisualStyleBackColor = true;
+            this.productsModifyButton.Click += new System.EventHandler(this.productsModifyButton_Click);
             // 
             // productsAddButton
             // 
@@ -142,6 +145,7 @@
             this.productsAddButton.TabIndex = 12;
             this.productsAddButton.Text = "Add";
             this.productsAddButton.UseVisualStyleBackColor = true;
+            this.productsAddButton.Click += new System.EventHandler(this.productsAddButton_Click);
             // 
             // productsLabel
             // 
@@ -185,8 +189,9 @@
             this.exitButton.TabIndex = 15;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,8 +212,9 @@
             this.Controls.Add(this.partsSearchTextBox);
             this.Controls.Add(this.partsSearchButton);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

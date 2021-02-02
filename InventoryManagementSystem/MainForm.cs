@@ -12,9 +12,50 @@ namespace InventoryManagementSystem
 {
     public partial class MainForm : Form
     {
+        static AddPart addPartForm;
+        static ModifyPart modifyPartForm;
+
+        static AddProduct addProductForm;
+        static ModifyProduct modifyProductForm;
+
+        static Inventory inventory; 
+
         public MainForm()
         {
             InitializeComponent();
+            inventory = new Inventory(); 
+        }
+        private void partsAddButton_Click(object sender, EventArgs e)
+        {
+            addPartForm = new AddPart();
+            addPartForm.ShowDialog();
+        }
+
+        private void partsModifyButton_Click(object sender, EventArgs e)
+        {
+            modifyPartForm = new ModifyPart();
+            modifyPartForm.ShowDialog();
+        }
+
+        private void productsAddButton_Click(object sender, EventArgs e)
+        {
+            addProductForm = new AddProduct();
+            addProductForm.ShowDialog();
+        }
+
+        private void productsModifyButton_Click(object sender, EventArgs e)
+        {
+            modifyProductForm = new ModifyProduct();
+            modifyProductForm.ShowDialog();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
         }
     }
 }
