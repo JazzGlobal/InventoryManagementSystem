@@ -24,6 +24,12 @@ namespace InventoryManagementSystem
             set { allParts = value; }
         }
 
+        public Inventory()
+        {
+            products = new BindingList<Product>();
+            allParts = new BindingList<Part>();
+        }
+
         public void AddProduct(Product product)
         {
             throw new NotImplementedException();
@@ -42,7 +48,8 @@ namespace InventoryManagementSystem
         }
         public void addPart(Part part)
         {
-            throw new NotImplementedException(); 
+            allParts.Add(part);
+            Console.WriteLine(allParts.Count);
         }
         public bool deletePart(Part part)
         {

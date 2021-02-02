@@ -32,6 +32,7 @@
             this.partsSearchButton = new System.Windows.Forms.Button();
             this.partsSearchTextBox = new System.Windows.Forms.TextBox();
             this.partsListView = new System.Windows.Forms.ListView();
+            this.partIdColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.partsLabel = new System.Windows.Forms.Label();
             this.partsAddButton = new System.Windows.Forms.Button();
             this.partsModifyButton = new System.Windows.Forms.Button();
@@ -73,12 +74,19 @@
             // 
             // partsListView
             // 
+            this.partsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.partIdColumn});
             this.partsListView.HideSelection = false;
             this.partsListView.Location = new System.Drawing.Point(16, 75);
             this.partsListView.Name = "partsListView";
             this.partsListView.Size = new System.Drawing.Size(383, 305);
             this.partsListView.TabIndex = 3;
             this.partsListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // partIdColumn
+            // 
+            this.partIdColumn.Tag = "PartID";
+            this.partIdColumn.Text = "PartID";
             // 
             // partsLabel
             // 
@@ -238,6 +246,7 @@
         private System.Windows.Forms.TextBox productsSearchTextbox;
         private System.Windows.Forms.Button productsSearchButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.ColumnHeader partIdColumn;
     }
 }
 

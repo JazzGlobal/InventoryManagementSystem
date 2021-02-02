@@ -18,12 +18,14 @@ namespace InventoryManagementSystem
         static AddProduct addProductForm;
         static ModifyProduct modifyProductForm;
 
-        static Inventory inventory; 
+        public static Inventory inventory; 
 
         public MainForm()
         {
             InitializeComponent();
-            inventory = new Inventory(); 
+            inventory = new Inventory();
+
+            EventManager.OnAddPart += AddPart;
         }
         private void partsAddButton_Click(object sender, EventArgs e)
         {
@@ -56,6 +58,17 @@ namespace InventoryManagementSystem
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
+
+        }
+        private void AddPart(Part part, bool outsourced)
+        {
+           if(outsourced)
+            {
+                inventory.addPart((Outsourced)part);
+            } else
+            {
+                inventory.addPart((InHouse)part);
+            }
         }
     }
 }

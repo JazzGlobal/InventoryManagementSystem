@@ -178,6 +178,7 @@
             this.addPartSaveButton.TabIndex = 15;
             this.addPartSaveButton.Text = "Save";
             this.addPartSaveButton.UseVisualStyleBackColor = true;
+            this.addPartSaveButton.Click += new System.EventHandler(this.addPartSaveButton_Click);
             // 
             // addPartCancelButton
             // 
@@ -187,6 +188,7 @@
             this.addPartCancelButton.TabIndex = 16;
             this.addPartCancelButton.Text = "Cancel";
             this.addPartCancelButton.UseVisualStyleBackColor = true;
+            this.addPartCancelButton.Click += new System.EventHandler(this.addPartCancelButton_Click);
             // 
             // addPartInHouseRadioButton
             // 
