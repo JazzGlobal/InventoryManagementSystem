@@ -140,5 +140,11 @@ namespace InventoryManagementSystem
                 inventory.removeProduct(rows[0].Index);
             }
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            EventManager.OnAddPart -= AddPart;
+            EventManager.OnModifyPart -= ModifyPart;
+        }
     }
 }
