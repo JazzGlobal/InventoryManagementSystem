@@ -160,13 +160,13 @@ namespace InventoryManagementSystem
                     inventory.removeProduct(rows[0].Index);
                 } else
                 {
-                    createErrorWindow($"Could not delete product {selected.ProductID} due to associated parts.");
+                    createErrorWindow($"Could not delete product {selected.ProductID} because it has associated parts.");
                 }
             }
         }
-        private void createErrorWindow(string error_message)
-        {
-            throw new NotImplementedException();
+        public static void createErrorWindow(string error_message)
+        {            
+            MessageBox.Show(error_message, "Error");
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
