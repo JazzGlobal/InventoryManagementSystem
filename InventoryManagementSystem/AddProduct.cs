@@ -79,5 +79,10 @@ namespace InventoryManagementSystem
             }
             refreshAssociatedPartList();
         }
+
+        private void productsSearchButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
