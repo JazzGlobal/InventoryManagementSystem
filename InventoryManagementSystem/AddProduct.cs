@@ -44,9 +44,15 @@ namespace InventoryManagementSystem
             newProduct.ProductID = int.Parse(addProductIDTextBox.Text);
             newProduct.Price = decimal.Parse(addProductPriceCostTextBox.Text);
 
-            
-            EventManager.FireAddProduct(newProduct);
-            Close();
+            if (newProduct.Max < newProduct.Min)
+            {
+                MessageBox.Show("Max must be greater than or equal to Min");
+            }
+            else
+            {
+                EventManager.FireAddProduct(newProduct);
+                Close();
+            }
         }
 
         private void productsAddButton_Click(object sender, EventArgs e)
