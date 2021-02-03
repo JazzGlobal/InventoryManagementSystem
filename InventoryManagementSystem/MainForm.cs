@@ -18,7 +18,7 @@ namespace InventoryManagementSystem
         static AddProduct addProductForm;
         static ModifyProduct modifyProductForm;
 
-        private Inventory inventory; 
+        public static Inventory inventory; 
 
         public MainForm()
         {
@@ -27,6 +27,7 @@ namespace InventoryManagementSystem
             inventory = new Inventory();
             EventManager.OnAddPart += AddPart;
             EventManager.OnModifyPart += ModifyPart;
+            EventManager.OnAddProduct += AddProduct;
         }
         private void partsAddButton_Click(object sender, EventArgs e)
         {
@@ -80,6 +81,12 @@ namespace InventoryManagementSystem
         {
             inventory.updatePart(editIndex, part);
         }
+
+        private void AddProduct(Product product)
+        {
+            inventory.AddProduct(product);
+        }
+
         private void partsDeleteButton_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection rows = partDataGridView.SelectedRows;

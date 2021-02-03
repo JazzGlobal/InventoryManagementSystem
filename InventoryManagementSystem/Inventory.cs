@@ -59,7 +59,7 @@ namespace InventoryManagementSystem
 
         public void AddProduct(Product product)
         {
-            throw new NotImplementedException();
+            products.Add(product);
         }
         public bool removeProduct(int index)
         {
@@ -75,7 +75,7 @@ namespace InventoryManagementSystem
         }
         public Product lookupProduct(int index)
         {
-            throw new NotImplementedException(); 
+            return products[index];
         }
         public void updateProduct(int index, Product product)
         {
@@ -92,7 +92,7 @@ namespace InventoryManagementSystem
         }
         public Part lookupPart(int index)
         {
-            throw new NotImplementedException();
+            return allParts[index];
         }
         public void updatePart(int index, Part part)
         {
