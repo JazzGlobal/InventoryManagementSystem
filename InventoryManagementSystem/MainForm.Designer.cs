@@ -84,6 +84,7 @@
             this.partsSearchButton.TabIndex = 1;
             this.partsSearchButton.Text = "Search";
             this.partsSearchButton.UseVisualStyleBackColor = true;
+            this.partsSearchButton.Click += new System.EventHandler(this.partsSearchButton_Click);
             // 
             // partsSearchTextBox
             // 
@@ -91,6 +92,7 @@
             this.partsSearchTextBox.Name = "partsSearchTextBox";
             this.partsSearchTextBox.Size = new System.Drawing.Size(163, 20);
             this.partsSearchTextBox.TabIndex = 2;
+            this.partsSearchTextBox.TextChanged += new System.EventHandler(this.partsSearchTextBox_TextChanged);
             // 
             // partsLabel
             // 
@@ -139,7 +141,6 @@
             this.productsDeleteButton.TabIndex = 14;
             this.productsDeleteButton.Text = "Delete";
             this.productsDeleteButton.UseVisualStyleBackColor = true;
-            this.productsDeleteButton.Click += new System.EventHandler(this.productsDeleteButton_Click);
             // 
             // productsModifyButton
             // 

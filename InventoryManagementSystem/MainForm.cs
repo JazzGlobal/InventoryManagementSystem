@@ -58,8 +58,8 @@ namespace InventoryManagementSystem
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            partDataGridView.DataSource = inventory.AllParts;
-            productDataGridView.DataSource = inventory.Products;
+            resetPartDataGridView();
+            resetProductDataGridView();
         }
         private void AddPart(Part part, bool outsourced)
         {
@@ -83,10 +83,33 @@ namespace InventoryManagementSystem
 
         private void productsDeleteButton_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection rows = productDataGridView.SelectedRows;
-            if (rows.Count > 0)
+
+        }
+
+        private void resetPartDataGridView()
+        {
+            partDataGridView.DataSource = inventory.AllParts;
+        }
+        private void resetProductDataGridView()
+        {
+            productDataGridView.DataSource = inventory.Products;
+        }
+
+        private void partsSearchButton_Click(object sender, EventArgs e)
+        {
+            BindingList<Part> temp_inv = inventory.AllParts;
+            IEnumerable<Part> partQuery =
+                from part in inventory.AllParts
+                where part.Name.Contains(partsSearchTextBox.Text)
+                select part;
+            partDataGridView.DataSource = partQuery.ToList();
+        }
+
+        private void partsSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if(partsSearchTextBox.Text == "")
             {
-                inventory.removeProduct(rows[0].Index);
+                resetPartDataGridView();
             }
         }
     }
