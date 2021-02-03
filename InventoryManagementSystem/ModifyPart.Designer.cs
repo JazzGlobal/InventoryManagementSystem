@@ -79,6 +79,7 @@
             this.addPartCancelButton.TabIndex = 35;
             this.addPartCancelButton.Text = "Cancel";
             this.addPartCancelButton.UseVisualStyleBackColor = true;
+            this.addPartCancelButton.Click += new System.EventHandler(this.addPartCancelButton_Click);
             // 
             // addPartSaveButton
             // 
@@ -88,6 +89,7 @@
             this.addPartSaveButton.TabIndex = 34;
             this.addPartSaveButton.Text = "Save";
             this.addPartSaveButton.UseVisualStyleBackColor = true;
+            this.addPartSaveButton.Click += new System.EventHandler(this.addPartSaveButton_Click);
             // 
             // label8
             // 
@@ -237,6 +239,7 @@
             this.Controls.Add(this.addPartIDTextBox);
             this.Name = "ModifyPart";
             this.Text = "ModifyPart";
+            this.Shown += new System.EventHandler(this.ModifyPart_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

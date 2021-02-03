@@ -26,6 +26,7 @@ namespace InventoryManagementSystem
             Inventory.debug = true;
             inventory = new Inventory();
             EventManager.OnAddPart += AddPart;
+            EventManager.OnModifyPart += ModifyPart;
         }
         private void partsAddButton_Click(object sender, EventArgs e)
         {
@@ -35,8 +36,12 @@ namespace InventoryManagementSystem
 
         private void partsModifyButton_Click(object sender, EventArgs e)
         {
-            modifyPartForm = new ModifyPart();
-            modifyPartForm.ShowDialog();
+            var rows = partDataGridView.SelectedRows;
+            if(rows.Count > 0)
+            {
+                modifyPartForm = new ModifyPart((Part)rows[0].DataBoundItem, rows[0].Index);
+                modifyPartForm.ShowDialog();
+            }
         }
 
         private void productsAddButton_Click(object sender, EventArgs e)
@@ -61,9 +66,9 @@ namespace InventoryManagementSystem
             resetPartDataGridView();
             resetProductDataGridView();
         }
-        private void AddPart(Part part, bool outsourced)
+        private void AddPart(Part part)
         {
-           if(outsourced)
+           if(part.GetType() == typeof(Outsourced))
             {
                 inventory.addPart((Outsourced)part);
             } else
@@ -71,7 +76,10 @@ namespace InventoryManagementSystem
                 inventory.addPart((InHouse)part);
             }
         }
-
+        private void ModifyPart(Part part, int editIndex)
+        {
+            inventory.updatePart(editIndex, part);
+        }
         private void partsDeleteButton_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection rows = partDataGridView.SelectedRows;
