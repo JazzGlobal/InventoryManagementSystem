@@ -61,7 +61,7 @@ namespace InventoryManagementSystem
         }
         private bool errorCheck()
         {
-            bool errorFree = true;
+            bool errorFree;
             if(addPartInHouseRadioButton.Checked)
             {
                 // try parse part identity
