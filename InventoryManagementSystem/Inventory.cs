@@ -30,6 +30,7 @@ namespace InventoryManagementSystem
             products = new BindingList<Product>();
             allParts = new BindingList<Part>();
 
+            // If true, adds a test entry in both AllParts and Products.
             if(debug)
             {
                 Outsourced newPart = new Outsourced();
@@ -62,6 +63,7 @@ namespace InventoryManagementSystem
         }
         public bool removeProduct(int index)
         {
+            // Returns false if the removeAt fails.
             try
             {
                 products.RemoveAt(index);
