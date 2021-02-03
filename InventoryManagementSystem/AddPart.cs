@@ -42,10 +42,8 @@ namespace InventoryManagementSystem
             newPart.Max = int.Parse(addPartMaxTextBox.Text);
 
             EventManager.FireAddPart(newPart);
-
             Close();
         }
-
         private void AddPart_Shown(object sender, EventArgs e)
         {
             addPartInHouseRadioButton.Checked = true;
