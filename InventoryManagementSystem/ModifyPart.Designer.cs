@@ -70,6 +70,7 @@
             this.addPartInHouseRadioButton.TabStop = true;
             this.addPartInHouseRadioButton.Text = "In-House";
             this.addPartInHouseRadioButton.UseVisualStyleBackColor = true;
+            this.addPartInHouseRadioButton.CheckedChanged += new System.EventHandler(this.addPartInHouseRadioButton_CheckedChanged);
             // 
             // addPartCancelButton
             // 
@@ -160,6 +161,7 @@
             this.addPartIdentityTextBox.Name = "addPartIdentityTextBox";
             this.addPartIdentityTextBox.Size = new System.Drawing.Size(100, 20);
             this.addPartIdentityTextBox.TabIndex = 26;
+            this.addPartIdentityTextBox.TextChanged += new System.EventHandler(this.addPartIdentityTextBox_TextChanged);
             // 
             // addPartMinTextBox
             // 
@@ -167,6 +169,7 @@
             this.addPartMinTextBox.Name = "addPartMinTextBox";
             this.addPartMinTextBox.Size = new System.Drawing.Size(56, 20);
             this.addPartMinTextBox.TabIndex = 25;
+            this.addPartMinTextBox.TextChanged += new System.EventHandler(this.addPartMinTextBox_TextChanged);
             // 
             // addPartMaxTextBox
             // 
@@ -174,6 +177,7 @@
             this.addPartMaxTextBox.Name = "addPartMaxTextBox";
             this.addPartMaxTextBox.Size = new System.Drawing.Size(56, 20);
             this.addPartMaxTextBox.TabIndex = 24;
+            this.addPartMaxTextBox.TextChanged += new System.EventHandler(this.addPartMaxTextBox_TextChanged);
             // 
             // addPartPriceCostTextBox
             // 
@@ -181,6 +185,7 @@
             this.addPartPriceCostTextBox.Name = "addPartPriceCostTextBox";
             this.addPartPriceCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.addPartPriceCostTextBox.TabIndex = 23;
+            this.addPartPriceCostTextBox.TextChanged += new System.EventHandler(this.addPartPriceCostTextBox_TextChanged);
             // 
             // addPartInventoryTextBox
             // 
@@ -188,6 +193,7 @@
             this.addPartInventoryTextBox.Name = "addPartInventoryTextBox";
             this.addPartInventoryTextBox.Size = new System.Drawing.Size(100, 20);
             this.addPartInventoryTextBox.TabIndex = 22;
+            this.addPartInventoryTextBox.TextChanged += new System.EventHandler(this.addPartInventoryTextBox_TextChanged);
             // 
             // addPartNameTextBox
             // 
@@ -212,6 +218,7 @@
             this.addPartIDTextBox.Name = "addPartIDTextBox";
             this.addPartIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.addPartIDTextBox.TabIndex = 19;
+            this.addPartIDTextBox.TextChanged += new System.EventHandler(this.addPartIDTextBox_TextChanged);
             // 
             // ModifyPart
             // 
