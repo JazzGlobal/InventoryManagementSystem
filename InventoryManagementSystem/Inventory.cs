@@ -42,7 +42,17 @@ namespace InventoryManagementSystem
                 newPart.Price = 10.00M;
 
                 allParts.Add(newPart);
-                Console.WriteLine(allParts.Count);
+
+                Product newProduct = new Product();
+                newProduct.AssociatedParts = new BindingList<Part>();
+                newProduct.InStock = 1;
+                newProduct.Max = 1;
+                newProduct.Min = 1;
+                newProduct.Name = "Test Product";
+                newProduct.ProductID = 123;
+                newProduct.Price = 10.00M;
+
+                products.Add(newProduct);
             }
         }
 
@@ -52,7 +62,14 @@ namespace InventoryManagementSystem
         }
         public bool removeProduct(int index)
         {
-            throw new NotImplementedException(); 
+            try
+            {
+                products.RemoveAt(index);
+                return true;
+            } catch (Exception e)
+            {
+                return false;
+            }
         }
         public Product lookupProduct(int index)
         {

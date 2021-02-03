@@ -59,6 +59,7 @@ namespace InventoryManagementSystem
         private void MainForm_Shown(object sender, EventArgs e)
         {
             partDataGridView.DataSource = inventory.AllParts;
+            productDataGridView.DataSource = inventory.Products;
         }
         private void AddPart(Part part, bool outsourced)
         {
@@ -77,6 +78,15 @@ namespace InventoryManagementSystem
             if(rows.Count > 0)
             {
                 inventory.deletePart((Part)rows[0].DataBoundItem);
+            }
+        }
+
+        private void productsDeleteButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rows = productDataGridView.SelectedRows;
+            if (rows.Count > 0)
+            {
+                inventory.removeProduct(rows[0].Index);
             }
         }
     }
