@@ -154,10 +154,20 @@ namespace InventoryManagementSystem
             DataGridViewSelectedRowCollection rows = partDataGridView.SelectedRows;
             if (rows.Count > 0)
             {
-                inventory.removeProduct(rows[0].Index);
+                Product selected = inventory.Products[rows[0].Index];
+                if(selected.AssociatedParts.Count == 0)
+                {
+                    inventory.removeProduct(rows[0].Index);
+                } else
+                {
+                    createErrorWindow($"Could not delete product {selected.ProductID} due to associated parts.");
+                }
             }
         }
-
+        private void createErrorWindow(string error_message)
+        {
+            throw new NotImplementedException();
+        }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             EventManager.OnAddPart -= AddPart;
