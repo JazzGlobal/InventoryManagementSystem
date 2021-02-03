@@ -41,12 +41,73 @@ namespace InventoryManagementSystem
             newPart.Min = int.Parse(addPartMinTextBox.Text);
             newPart.Max = int.Parse(addPartMaxTextBox.Text);
 
-            EventManager.FireAddPart(newPart);
-            Close();
+            if(newPart.Max < newPart.Min)
+            {
+                MessageBox.Show("Max must be greater than or equal to Min");
+            } else
+            {
+                EventManager.FireAddPart(newPart);
+                Close();
+            }
         }
         private void AddPart_Shown(object sender, EventArgs e)
         {
             addPartInHouseRadioButton.Checked = true;
+        }
+
+        private void addPartIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addPartSaveButton.Enabled = errorCheck();
+        }
+        private bool errorCheck()
+        {
+            bool errorFree = true;
+            if(addPartInHouseRadioButton.Checked)
+            {
+                // try parse part identity
+                errorFree = int.TryParse(addPartIdentityTextBox.Text, out int identityResult) && int.TryParse(addPartIDTextBox.Text, out int idResult)
+                    && decimal.TryParse(addPartPriceCostTextBox.Text, out decimal priceResult) && int.TryParse(addPartInventoryTextBox.Text, out int inventoryResult)
+                    && int.TryParse(addPartMinTextBox.Text, out int minResult) && int.TryParse(addPartMaxTextBox.Text, out int maxResult);
+            } else
+            {
+                errorFree = int.TryParse(addPartIDTextBox.Text, out int idResult)
+                    && decimal.TryParse(addPartPriceCostTextBox.Text, out decimal priceResult) && int.TryParse(addPartInventoryTextBox.Text, out int inventoryResult)
+                    && int.TryParse(addPartMinTextBox.Text, out int minResult) && int.TryParse(addPartMaxTextBox.Text, out int maxResult);
+            }
+            // All other try parses
+            return errorFree;
+        }
+
+        private void addPartInventoryTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addPartSaveButton.Enabled = errorCheck();
+        }
+
+        private void addPartPriceCostTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addPartSaveButton.Enabled = errorCheck();
+        }
+
+        private void addPartMaxTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addPartSaveButton.Enabled = errorCheck();
+        }
+
+        private void addPartMinTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addPartSaveButton.Enabled = errorCheck();
+        }
+
+        private void addPartIdentityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (addPartInHouseRadioButton.Checked)
+            {
+                addPartSaveButton.Enabled = errorCheck();
+            }
+        }
+        private void addPartInHouseRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            addPartSaveButton.Enabled = errorCheck();
         }
     }
 }
