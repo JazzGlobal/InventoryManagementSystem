@@ -102,7 +102,10 @@ namespace InventoryManagementSystem
             DataGridViewSelectedRowCollection rows = partDataGridView.SelectedRows;
             if(rows.Count > 0)
             {
-                inventory.deletePart((Part)rows[0].DataBoundItem);
+                if(deleteConfirm())
+                {
+                    inventory.deletePart((Part)rows[0].DataBoundItem);
+                }
             }
         }
 
@@ -151,13 +154,16 @@ namespace InventoryManagementSystem
 
         private void productsDeleteButton_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection rows = partDataGridView.SelectedRows;
+            DataGridViewSelectedRowCollection rows = productDataGridView.SelectedRows;
             if (rows.Count > 0)
             {
                 Product selected = inventory.Products[rows[0].Index];
                 if(selected.AssociatedParts.Count == 0)
                 {
-                    inventory.removeProduct(rows[0].Index);
+                    if (deleteConfirm())
+                    {
+                        inventory.removeProduct(rows[0].Index);
+                    }
                 } else
                 {
                     createErrorWindow($"Could not delete product {selected.ProductID} because it has associated parts.");
@@ -167,6 +173,10 @@ namespace InventoryManagementSystem
         public static void createErrorWindow(string error_message)
         {            
             MessageBox.Show(error_message, "Error");
+        }
+        private bool deleteConfirm()
+        {
+            return MessageBox.Show("Yes or No", "Delete Item?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
