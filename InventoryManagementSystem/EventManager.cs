@@ -8,12 +8,19 @@ namespace InventoryManagementSystem
 {
     public class EventManager
     {
-        public delegate void AddPartAction(Part part, bool outsourced);
+        public delegate void AddPartAction(Part part);
+        public delegate void ModifyPartAction(Part part, int editIndex);
         public static event AddPartAction OnAddPart;
-    
-        public static void FireAddPart(Part part, bool outsourced)
+        public static event ModifyPartAction OnModifyPart;
+        
+        
+        public static void FireAddPart(Part part)
         {
-            OnAddPart(part, outsourced);
+            OnAddPart(part);
+        }
+        public static void FireModifyPart(Part part, int editIndex)
+        {
+            OnModifyPart(part, editIndex);
         }
     }
 }

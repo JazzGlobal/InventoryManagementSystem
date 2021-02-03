@@ -96,7 +96,7 @@ namespace InventoryManagementSystem
         }
         public void updatePart(int index, Part part)
         {
-            throw new NotImplementedException();
+            allParts[index] = part;
         }
     }
 }

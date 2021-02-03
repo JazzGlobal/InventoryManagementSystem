@@ -24,11 +24,9 @@ namespace InventoryManagementSystem
 
         private void addPartSaveButton_Click(object sender, EventArgs e)
         {
-            bool outsourced = false;
             Part newPart;
             if (addPartOutsourcedRadioButton.Checked)
             {
-                outsourced = true;
                 newPart = new Outsourced();
                 (newPart as Outsourced).CompanyName = addPartIdentityTextBox.Text;
             } else
@@ -43,9 +41,14 @@ namespace InventoryManagementSystem
             newPart.Min = int.Parse(addPartMinTextBox.Text);
             newPart.Max = int.Parse(addPartMaxTextBox.Text);
 
-            EventManager.FireAddPart(newPart, outsourced);
+            EventManager.FireAddPart(newPart);
 
             Close();
+        }
+
+        private void AddPart_Shown(object sender, EventArgs e)
+        {
+            addPartInHouseRadioButton.Checked = true;
         }
     }
 }

@@ -238,6 +238,7 @@
             this.Controls.Add(this.addPartIDTextBox);
             this.Name = "AddPart";
             this.Text = "AddPart";
+            this.Shown += new System.EventHandler(this.AddPart_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
