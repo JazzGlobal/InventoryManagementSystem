@@ -18,7 +18,7 @@ namespace InventoryManagementSystem
         static AddProduct addProductForm;
         static ModifyProduct modifyProductForm;
 
-        public static Inventory inventory; 
+        private Inventory inventory; 
 
         public MainForm()
         {
