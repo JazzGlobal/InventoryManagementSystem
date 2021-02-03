@@ -44,7 +44,12 @@ namespace InventoryManagementSystem
             if(newPart.Max < newPart.Min)
             {
                 MessageBox.Show("Max must be greater than or equal to Min");
-            } else
+            }
+            else if (!(newPart.InStock >= newPart.Min) || !(newPart.InStock <= newPart.Max))
+            {
+                MessageBox.Show("Inventory must fall with Min and Max.");
+            }
+            else
             {
                 EventManager.FireAddPart(newPart);
                 Close();
