@@ -91,8 +91,15 @@ namespace InventoryManagementSystem
             newProduct.ProductID = int.Parse(modifyProductIDTextBox.Text);
             newProduct.Price = decimal.Parse(modifyProductPriceCostTextBox.Text);
 
-            EventManager.FireModifyProduct(newProduct, editIndex);
-            Close();
+            if (newProduct.Max < newProduct.Min)
+            {
+                MessageBox.Show("Max must be greater than or equal to Min");
+            }
+            else
+            {
+                EventManager.FireModifyProduct(newProduct, editIndex);
+                Close();
+            }
         }
 
         private void modifyProductCancelButton_Click(object sender, EventArgs e)
