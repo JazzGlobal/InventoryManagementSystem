@@ -13,6 +13,7 @@ namespace InventoryManagementSystem
 
         private BindingList<Product> products;
         private BindingList<Part> allParts;
+        public static bool debug = false; 
         public BindingList<Product> Products
         {
             get { return products; }
@@ -28,6 +29,21 @@ namespace InventoryManagementSystem
         {
             products = new BindingList<Product>();
             allParts = new BindingList<Part>();
+
+            if(debug)
+            {
+                Outsourced newPart = new Outsourced();
+                newPart.Name = "Test";
+                newPart.InStock = 1;
+                newPart.Min = 1;
+                newPart.Max = 1;
+                newPart.PartID = 123;
+                newPart.CompanyName = "Test Company";
+                newPart.Price = 10.00M;
+
+                allParts.Add(newPart);
+                Console.WriteLine(allParts.Count);
+            }
         }
 
         public void AddProduct(Product product)
@@ -53,7 +69,7 @@ namespace InventoryManagementSystem
         }
         public bool deletePart(Part part)
         {
-            throw new NotImplementedException();
+            return allParts.Remove(part);
         }
         public Part lookupPart(int index)
         {
