@@ -81,11 +81,6 @@ namespace InventoryManagementSystem
             }
         }
 
-        private void productsDeleteButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void resetPartDataGridView()
         {
             partDataGridView.DataSource = inventory.AllParts;
@@ -97,10 +92,9 @@ namespace InventoryManagementSystem
 
         private void partsSearchButton_Click(object sender, EventArgs e)
         {
-            BindingList<Part> temp_inv = inventory.AllParts;
             IEnumerable<Part> partQuery =
                 from part in inventory.AllParts
-                where part.Name.Contains(partsSearchTextBox.Text)
+                where part.Name.ToLower().Contains(partsSearchTextBox.Text.ToLower())
                 select part;
             partDataGridView.DataSource = partQuery.ToList();
         }
@@ -110,6 +104,32 @@ namespace InventoryManagementSystem
             if(partsSearchTextBox.Text == "")
             {
                 resetPartDataGridView();
+            }
+        }
+
+        private void productsSearchButton_Click(object sender, EventArgs e)
+        {
+            IEnumerable<Product> productQuery =
+                from product in inventory.Products
+                where product.Name.ToLower().Contains(productsSearchTextbox.Text.ToLower())
+                select product;
+            productDataGridView.DataSource = productQuery.ToList();
+        }
+
+        private void productsSearchTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if(productsSearchTextbox.Text == "")
+            {
+                resetProductDataGridView();
+            }
+        }
+
+        private void productsDeleteButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rows = partDataGridView.SelectedRows;
+            if (rows.Count > 0)
+            {
+                inventory.removeProduct(rows[0].Index);
             }
         }
     }

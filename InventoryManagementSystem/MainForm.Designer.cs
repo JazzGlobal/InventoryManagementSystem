@@ -141,6 +141,7 @@
             this.productsDeleteButton.TabIndex = 14;
             this.productsDeleteButton.Text = "Delete";
             this.productsDeleteButton.UseVisualStyleBackColor = true;
+            this.productsDeleteButton.Click += new System.EventHandler(this.productsDeleteButton_Click);
             // 
             // productsModifyButton
             // 
@@ -177,6 +178,7 @@
             this.productsSearchTextbox.Name = "productsSearchTextbox";
             this.productsSearchTextbox.Size = new System.Drawing.Size(163, 20);
             this.productsSearchTextbox.TabIndex = 9;
+            this.productsSearchTextbox.TextChanged += new System.EventHandler(this.productsSearchTextbox_TextChanged);
             // 
             // productsSearchButton
             // 
@@ -186,6 +188,7 @@
             this.productsSearchButton.TabIndex = 8;
             this.productsSearchButton.Text = "Search";
             this.productsSearchButton.UseVisualStyleBackColor = true;
+            this.productsSearchButton.Click += new System.EventHandler(this.productsSearchButton_Click);
             // 
             // exitButton
             // 
