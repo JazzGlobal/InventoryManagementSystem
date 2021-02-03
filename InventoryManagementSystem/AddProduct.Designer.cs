@@ -151,6 +151,7 @@
             this.addProductIDTextBox.Name = "addProductIDTextBox";
             this.addProductIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.addProductIDTextBox.TabIndex = 23;
+            this.addProductIDTextBox.TextChanged += new System.EventHandler(this.addProductIDTextBox_TextChanged);
             // 
             // addProductNameTextBox
             // 
@@ -165,6 +166,7 @@
             this.addProductInventoryTextBox.Name = "addProductInventoryTextBox";
             this.addProductInventoryTextBox.Size = new System.Drawing.Size(100, 20);
             this.addProductInventoryTextBox.TabIndex = 26;
+            this.addProductInventoryTextBox.TextChanged += new System.EventHandler(this.addProductInventoryTextBox_TextChanged);
             // 
             // addProductPriceCostTextBox
             // 
@@ -172,6 +174,7 @@
             this.addProductPriceCostTextBox.Name = "addProductPriceCostTextBox";
             this.addProductPriceCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.addProductPriceCostTextBox.TabIndex = 27;
+            this.addProductPriceCostTextBox.TextChanged += new System.EventHandler(this.addProductPriceCostTextBox_TextChanged);
             // 
             // addProductMaxTextBox
             // 
@@ -179,6 +182,7 @@
             this.addProductMaxTextBox.Name = "addProductMaxTextBox";
             this.addProductMaxTextBox.Size = new System.Drawing.Size(82, 20);
             this.addProductMaxTextBox.TabIndex = 28;
+            this.addProductMaxTextBox.TextChanged += new System.EventHandler(this.addProductMaxTextBox_TextChanged);
             // 
             // idLabel
             // 
@@ -240,6 +244,7 @@
             this.addProductMinTextBox.Name = "addProductMinTextBox";
             this.addProductMinTextBox.Size = new System.Drawing.Size(82, 20);
             this.addProductMinTextBox.TabIndex = 37;
+            this.addProductMinTextBox.TextChanged += new System.EventHandler(this.addProductMinTextBox_TextChanged);
             // 
             // label2
             // 

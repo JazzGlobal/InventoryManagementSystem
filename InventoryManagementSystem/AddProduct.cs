@@ -44,6 +44,7 @@ namespace InventoryManagementSystem
             newProduct.ProductID = int.Parse(addProductIDTextBox.Text);
             newProduct.Price = decimal.Parse(addProductPriceCostTextBox.Text);
 
+            
             EventManager.FireAddProduct(newProduct);
             Close();
         }
@@ -83,6 +84,38 @@ namespace InventoryManagementSystem
         private void productsSearchButton_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+        private bool errorCheck()
+        {
+                // Checks to ensure every parsed field can successfully be parsed.
+            return int.TryParse(addProductIDTextBox.Text, out int idResult)
+                    && decimal.TryParse(addProductPriceCostTextBox.Text, out decimal priceResult) && int.TryParse(addProductInventoryTextBox.Text, out int inventoryResult)
+                    && int.TryParse(addProductMinTextBox.Text, out int minResult) && int.TryParse(addProductMaxTextBox.Text, out int maxResult);   
+        }
+
+        private void addProductIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addProductSaveButton.Enabled = errorCheck();
+        }
+
+        private void addProductInventoryTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addProductSaveButton.Enabled = errorCheck();
+        }
+
+        private void addProductPriceCostTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addProductSaveButton.Enabled = errorCheck();
+        }
+
+        private void addProductMaxTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addProductSaveButton.Enabled = errorCheck();
+        }
+
+        private void addProductMinTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addProductSaveButton.Enabled = errorCheck();
         }
     }
 }
