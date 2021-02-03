@@ -113,7 +113,11 @@ namespace InventoryManagementSystem
 
         private void productsSearchButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            IEnumerable<Part> partQuery =
+                from part in temp_inventory
+                where part.Name.ToLower().Contains(productsSearchTextbox.Text.ToLower())
+                select part;
+            candidatePartDataGridView.DataSource = partQuery.ToList();
         }
         private bool errorCheck()
         {
@@ -146,6 +150,18 @@ namespace InventoryManagementSystem
         private void modifyProductMinTextBox_TextChanged(object sender, EventArgs e)
         {            
             modifyProductSaveButton.Enabled = errorCheck();
+        }
+
+        private void productsSearchTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (productsSearchTextbox.Text == "")
+            {
+                resetCandidatePartDataGridView();
+            }
+        }
+        private void resetCandidatePartDataGridView()
+        {
+            candidatePartDataGridView.DataSource = temp_inventory;
         }
     }
 }

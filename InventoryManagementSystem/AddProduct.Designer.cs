@@ -95,6 +95,7 @@
             this.productsSearchTextbox.Name = "productsSearchTextbox";
             this.productsSearchTextbox.Size = new System.Drawing.Size(163, 20);
             this.productsSearchTextbox.TabIndex = 14;
+            this.productsSearchTextbox.TextChanged += new System.EventHandler(this.productsSearchTextbox_TextChanged);
             // 
             // productsSearchButton
             // 
