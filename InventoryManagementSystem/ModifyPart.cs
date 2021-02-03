@@ -134,6 +134,14 @@ namespace InventoryManagementSystem
         private void addPartInHouseRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             addPartSaveButton.Enabled = errorCheck();
+            if (addPartInHouseRadioButton.Checked)
+            {
+                addPartIdentityLabel.Text = "Machine ID";
+            }
+            else
+            {
+                addPartIdentityLabel.Text = "Company Name";
+            }
         }
     }
 }

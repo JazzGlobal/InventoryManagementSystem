@@ -42,7 +42,7 @@
             this.addPartPriceCostLabel = new System.Windows.Forms.Label();
             this.addPartMaxLabel = new System.Windows.Forms.Label();
             this.addPartMinLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.addPartIdentityLabel = new System.Windows.Forms.Label();
             this.addPartSaveButton = new System.Windows.Forms.Button();
             this.addPartCancelButton = new System.Windows.Forms.Button();
             this.addPartInHouseRadioButton = new System.Windows.Forms.RadioButton();
@@ -167,14 +167,14 @@
             this.addPartMinLabel.TabIndex = 13;
             this.addPartMinLabel.Text = "Min";
             // 
-            // label8
+            // addPartIdentityLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(2, 180);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Machine ID";
+            this.addPartIdentityLabel.AutoSize = true;
+            this.addPartIdentityLabel.Location = new System.Drawing.Point(2, 180);
+            this.addPartIdentityLabel.Name = "addPartIdentityLabel";
+            this.addPartIdentityLabel.Size = new System.Drawing.Size(62, 13);
+            this.addPartIdentityLabel.TabIndex = 14;
+            this.addPartIdentityLabel.Text = "Machine ID";
             // 
             // addPartSaveButton
             // 
@@ -228,7 +228,7 @@
             this.Controls.Add(this.addPartInHouseRadioButton);
             this.Controls.Add(this.addPartCancelButton);
             this.Controls.Add(this.addPartSaveButton);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.addPartIdentityLabel);
             this.Controls.Add(this.addPartMinLabel);
             this.Controls.Add(this.addPartMaxLabel);
             this.Controls.Add(this.addPartPriceCostLabel);
@@ -267,7 +267,7 @@
         private System.Windows.Forms.Label addPartPriceCostLabel;
         private System.Windows.Forms.Label addPartMaxLabel;
         private System.Windows.Forms.Label addPartMinLabel;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label addPartIdentityLabel;
         private System.Windows.Forms.Button addPartSaveButton;
         private System.Windows.Forms.Button addPartCancelButton;
         private System.Windows.Forms.RadioButton addPartInHouseRadioButton;
