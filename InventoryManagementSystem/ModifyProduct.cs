@@ -99,5 +99,10 @@ namespace InventoryManagementSystem
         {
             Close();
         }
+
+        private void productsSearchButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
