@@ -79,7 +79,7 @@ namespace InventoryManagementSystem
         }
         public void updateProduct(int index, Product product)
         {
-            throw new NotImplementedException();
+            products[index] = product;
         }
         public void addPart(Part part)
         {

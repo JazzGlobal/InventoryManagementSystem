@@ -28,6 +28,7 @@ namespace InventoryManagementSystem
             EventManager.OnAddPart += AddPart;
             EventManager.OnModifyPart += ModifyPart;
             EventManager.OnAddProduct += AddProduct;
+            EventManager.OnModifyProduct += ModifyProduct;
         }
         private void partsAddButton_Click(object sender, EventArgs e)
         {
@@ -53,8 +54,12 @@ namespace InventoryManagementSystem
 
         private void productsModifyButton_Click(object sender, EventArgs e)
         {
-            modifyProductForm = new ModifyProduct();
-            modifyProductForm.ShowDialog();
+            var rows = productDataGridView.SelectedRows;
+            if(rows.Count > 0)
+            {
+                modifyProductForm = new ModifyProduct((Product)rows[0].DataBoundItem, rows[0].Index);
+                modifyProductForm.ShowDialog();
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -85,6 +90,11 @@ namespace InventoryManagementSystem
         private void AddProduct(Product product)
         {
             inventory.AddProduct(product);
+        }
+
+        private void ModifyProduct(Product product, int editIndex)
+        {
+            inventory.updateProduct(editIndex, product);
         }
 
         private void partsDeleteButton_Click(object sender, EventArgs e)
@@ -152,6 +162,8 @@ namespace InventoryManagementSystem
         {
             EventManager.OnAddPart -= AddPart;
             EventManager.OnModifyPart -= ModifyPart;
+            EventManager.OnAddProduct -= AddProduct;
+            EventManager.OnModifyProduct -= ModifyProduct;
         }
     }
 }
