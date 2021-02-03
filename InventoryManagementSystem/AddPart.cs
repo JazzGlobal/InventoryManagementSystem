@@ -64,13 +64,13 @@ namespace InventoryManagementSystem
             bool errorFree;
             if(addPartInHouseRadioButton.Checked)
             {
-                // try parse part identity
+                // Checks to ensure every parsed field can successfully be parsed. Includes Identity field.
                 errorFree = int.TryParse(addPartIdentityTextBox.Text, out int identityResult) && int.TryParse(addPartIDTextBox.Text, out int idResult)
                     && decimal.TryParse(addPartPriceCostTextBox.Text, out decimal priceResult) && int.TryParse(addPartInventoryTextBox.Text, out int inventoryResult)
                     && int.TryParse(addPartMinTextBox.Text, out int minResult) && int.TryParse(addPartMaxTextBox.Text, out int maxResult);
             } else
             {
-                // Identity not needed when Outsourced.
+                // Checks to ensure every parsed field can successfully be parsed. Does not include Identity field.
                 errorFree = int.TryParse(addPartIDTextBox.Text, out int idResult)
                     && decimal.TryParse(addPartPriceCostTextBox.Text, out decimal priceResult) && int.TryParse(addPartInventoryTextBox.Text, out int inventoryResult)
                     && int.TryParse(addPartMinTextBox.Text, out int minResult) && int.TryParse(addPartMaxTextBox.Text, out int maxResult);
