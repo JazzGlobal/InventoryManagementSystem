@@ -76,6 +76,7 @@
             this.modifyProductMinTextBox.Name = "modifyProductMinTextBox";
             this.modifyProductMinTextBox.Size = new System.Drawing.Size(82, 20);
             this.modifyProductMinTextBox.TabIndex = 59;
+            this.modifyProductMinTextBox.TextChanged += new System.EventHandler(this.modifyProductMinTextBox_TextChanged);
             // 
             // addPartMinLabel
             // 
@@ -137,6 +138,7 @@
             this.modifyProductMaxTextBox.Name = "modifyProductMaxTextBox";
             this.modifyProductMaxTextBox.Size = new System.Drawing.Size(82, 20);
             this.modifyProductMaxTextBox.TabIndex = 52;
+            this.modifyProductMaxTextBox.TextChanged += new System.EventHandler(this.modifyProductMaxTextBox_TextChanged);
             // 
             // modifyProductPriceCostTextBox
             // 
@@ -144,6 +146,7 @@
             this.modifyProductPriceCostTextBox.Name = "modifyProductPriceCostTextBox";
             this.modifyProductPriceCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.modifyProductPriceCostTextBox.TabIndex = 51;
+            this.modifyProductPriceCostTextBox.TextChanged += new System.EventHandler(this.modifyProductPriceCostTextBox_TextChanged);
             // 
             // modifyProductInventoryTextBox
             // 
@@ -151,6 +154,7 @@
             this.modifyProductInventoryTextBox.Name = "modifyProductInventoryTextBox";
             this.modifyProductInventoryTextBox.Size = new System.Drawing.Size(100, 20);
             this.modifyProductInventoryTextBox.TabIndex = 50;
+            this.modifyProductInventoryTextBox.TextChanged += new System.EventHandler(this.modifyProductInventoryTextBox_TextChanged);
             // 
             // modifyProductNameTextBox
             // 
@@ -166,6 +170,7 @@
             this.modifyProductIDTextBox.Name = "modifyProductIDTextBox";
             this.modifyProductIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.modifyProductIDTextBox.TabIndex = 48;
+            this.modifyProductIDTextBox.TextChanged += new System.EventHandler(this.modifyProductIDTextBox_TextChanged);
             // 
             // modifyProductSaveButton
             // 
