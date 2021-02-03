@@ -70,11 +70,11 @@ namespace InventoryManagementSystem
                     && int.TryParse(addPartMinTextBox.Text, out int minResult) && int.TryParse(addPartMaxTextBox.Text, out int maxResult);
             } else
             {
+                // Identity not needed when Outsourced.
                 errorFree = int.TryParse(addPartIDTextBox.Text, out int idResult)
                     && decimal.TryParse(addPartPriceCostTextBox.Text, out decimal priceResult) && int.TryParse(addPartInventoryTextBox.Text, out int inventoryResult)
                     && int.TryParse(addPartMinTextBox.Text, out int minResult) && int.TryParse(addPartMaxTextBox.Text, out int maxResult);
             }
-            // All other try parses
             return errorFree;
         }
 
